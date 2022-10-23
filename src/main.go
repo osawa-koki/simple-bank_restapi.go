@@ -7,10 +7,12 @@ import (
 )
 
 // JSON解析用に使用する構造体の定義
+// JSON出力用のキーは「`json:★★★`」と指定することが可能。
+// 指定しなければ、構造体のキーがそのまま使用される。
 type Customer struct {
-	Name string
-	City string
-	Zipcode string
+	Name string `json:fill_name`
+	City string `json:city`
+	Zipcode string `json:zip_code`
 }
 
 func greet(w http.ResponseWriter, r *http.Request) {
