@@ -8,9 +8,9 @@ import (
 )
 
 // JSON解析用に使用する構造体の定義
-// JSON出力用のキーは「`json:★★★`」と指定することが可能。
+// JSON出力用のキーは「`json:"★★★"`」と指定することが可能。
 // 指定しなければ、構造体のキーがそのまま使用される。
-// XMLを使用する場合には「xml:★★★」を書く。
+// XMLを使用する場合には「xml:"★★★"」を書く。
 // ひとつの構造体をJSONとXMLで共有することも可能。
 type Customer struct {
 	Name string `json:"fill_name" xml:"name"`
