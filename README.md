@@ -37,6 +37,18 @@ docker run -p 80:80 -it --rm --name my-simple-restapi_outline.go simple-restapi_
 docker build -t simple-restapi_outline.go . && docker run -p 80:80 -it --rm --name my-simple-restapi_outline.go simple-restapi_outline.go
 ```
 
+## 動作確認
+
+以下のパスに対してアクセスする。  
+
+- /
+- /greet
+- /customers
+- /customers_xml
+- /customers_flex
+
+また、それぞれ`Accept`ヘッダを`text/html`と`application/json`にセットして試してみる。  
+
 ## デプロイ設定(Render.com)
 
 | キー | バリュー |
