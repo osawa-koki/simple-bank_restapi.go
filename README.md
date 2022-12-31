@@ -1,6 +1,6 @@
-# simple-bank_restapi.go
+# simple-restapi_outline.go
 
-RESTfulアーキテクチャの基づいたGo言語による学習目的APIサーバ構築サンプル。
+RESTfulアーキテクチャの基づいたGo言語による学習目的APIサーバ構築サンプル。  
 
 ## 実行方法
 
@@ -11,6 +11,44 @@ go run main.go
 # ビルド
 go build -o bin main.go
 ```
+
+## モジュール管理
+
+同一ディレクトリに存在するファイルでひとつのモジュールを構築する。  
+したがって、他の言語と異なり、サブディレクトリにあるファイルは別のファイルに属する。  
+
+モジュールは当該ディレクトリにある`go.mod`ファイルで管理される。  
+`module example.com`は当該モジュール名が`example.com`であることを意味する。  
+
+モジュール名は任意で構わないが、実在する他のモジュールを指定することはできない。  
+
+`example.com`モジュール内のファイルで`import "example.com/app"`と書くと`example.com`モジュールのサブディレクトリである`app`ディレクトリから構成されるモジュールを使用可能になる。  
+
+このプロジェクトではルートリポジトリに`example.com`という名前のモジュールを作成し、`main.go`ファイル内で`import "example.com/app"`と書いているため、appディレクトリにある`app.go`と`handlers.go`から構成されるモジュールを使用可能。  
+
+## 実行方法(Docker)
+
+```shell
+# Dockerfileのビルドの実行
+docker build -t simple-restapi_outline.go .
+docker run -p 80:80 -it --rm --name my-simple-restapi_outline.go simple-restapi_outline.go
+
+# 一行で書くなら、、、
+docker build -t simple-restapi_outline.go . && docker run -p 80:80 -it --rm --name my-simple-restapi_outline.go simple-restapi_outline.go
+```
+
+## デプロイ設定(Render.com)
+
+| キー | バリュー |
+| ---- | ---- |
+| Name | simple-restapi_outline.go |
+| Region | Oregon(US West) |
+| Branch | main |
+| Root Directory |  |
+| Environment | Docker |
+| Dockerfile Path | ./Dockerfile |
+| Docker Build Context Directory |  |
+| Docker Command |  |
 
 ## 参考文献
 

@@ -1,3 +1,3 @@
-module github.com/osawa-koki/simple-restapi_outline.go
+module example.com
 
 go 1.17

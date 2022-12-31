@@ -19,7 +19,7 @@ type Customer struct {
 }
 
 func greet(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello World")
+	fmt.Fprint(w, "Happy New Yaer!")
 }
 
 func getAllCustomers(w http.ResponseWriter, r *http.Request) {

@@ -1,6 +1,6 @@
 package main
 
-import "github.com/osawa-koki/simple-restapi_outline.go/app"
+import "example.com/app"
 
 func main() {
 	app.Start()
