@@ -49,6 +49,16 @@ docker build -t simple-restapi_outline.go . && docker run -p 80:80 -it --rm --na
 
 また、それぞれ`Accept`ヘッダを`text/html`と`application/json`にセットして試してみる。  
 
+```go
+type Customer struct {
+  Name    string `json:"fill_name" xml:"name"`
+  City    string `json:"city" xml:"city"`
+  Zipcode string `json:"zip_code" xml:"zipcode"`
+}
+```
+
+json用とxml用のプロパティは構造体で設定し、それぞれの出し分けは`r.Header.Get("Accept") == "text/xml"`で判断している。  
+
 ## デプロイ設定(Render.com)
 
 | キー | バリュー |
